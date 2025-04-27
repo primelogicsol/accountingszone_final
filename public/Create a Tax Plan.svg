@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="115px" height="78px"
+    viewBox="0 0 115 78" version="1.1">
+    <script xmlns="" />
+    <title>Home-Create-2x-1</title>
+    <defs>
+        <polygon id="path-1"
+            points="0.000267857143 0.885648649 74.5591964 0.885648649 74.5591964 65.9470216 0.000267857143 65.9470216" />
+        <polygon id="path-3" points="0 71 80 71 80 1 0 1" />
+    </defs>
+    <g id="Home-Create-2x-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(18.000000, 4.000000)">
+            <g id="Group-3">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1" />
+                </mask>
+                <g id="Clip-2" />
+                <path
+                    d="M72.2136607,65.9470216 L2.34580357,65.9470216 C1.05026786,65.9470216 0.000267857143,64.8981568 0.000267857143,63.6040216 L0.000267857143,3.22829189 C0.000267857143,1.93415676 1.05026786,0.885291892 2.34580357,0.885291892 L72.2136607,0.885291892 C73.5091964,0.885291892 74.5591964,1.93415676 74.5591964,3.22829189 L74.5591964,63.6040216 C74.5591964,64.8981568 73.5091964,65.9470216 72.2136607,65.9470216"
+                    id="Fill-1" fill="#E7EBEE" mask="url(#mask-2)" />
+            </g>
+            <path
+                d="M30,9.85751748 L21.3269306,21.0034965 L21.3269306,35 C13.4149234,35 7,28.7368881 7,21.0034965 C7,13.2701049 13.4149234,7 21.3269306,7 C24.5858154,7 27.5933976,8.06643357 30,9.85751748"
+                id="Fill-4" fill="#B2BDC6" />
+            <path d="M35,34.0156748 C32.3688036,37.0625742 28.4143732,39 24,39 L24,25 L35,34.0156748 Z" id="Fill-6"
+                fill="#FFFFFF" />
+            <path
+                d="M38,21.610415 C38,25.1916056 36.7636772,28.4632095 34.7063452,31 L24,21.610415 L32.4793905,10 C35.835998,12.6679096 38,16.8728266 38,21.610415"
+                id="Fill-8" fill="#FFFFFF" />
+            <mask id="mask-4" fill="white">
+                <use xlink:href="#path-3" />
+            </mask>
+            <g id="Clip-11" />
+            <polygon id="Fill-10" fill="#B2BDC6" mask="url(#mask-4)" points="47 25 52 25 52 16 47 16" />
+            <polygon id="Fill-12" fill="#B2BDC6" mask="url(#mask-4)" points="54 25 59 25 59 12 54 12" />
+            <polygon id="Fill-13" fill="#B2BDC6" mask="url(#mask-4)" points="61 25 66 25 66 13 61 13" />
+            <polygon id="Fill-14" fill="#B2BDC6" mask="url(#mask-4)" points="45 26 67 26 67 25 45 25" />
+            <polygon id="Fill-15" fill="#B2BDC6" mask="url(#mask-4)" points="9 48 24 48 24 45 9 45" />
+            <polygon id="Fill-16" fill="#FFFFFF" mask="url(#mask-4)" points="10 58 17 58 17 52 10 52" />
+            <polygon id="Fill-17" fill="#FFFFFF" mask="url(#mask-4)" points="19 58 26 58 26 52 19 52" />
+            <polygon id="Fill-18" fill="#FFFFFF" mask="url(#mask-4)" points="29 58 36 58 36 52 29 52" />
+            <path
+                d="M80,54.5 C80,63.6129819 72.6129819,71 63.5,71 C54.3870181,71 47,63.6129819 47,54.5 C47,45.3870181 54.3870181,38 63.5,38 C72.6129819,38 80,45.3870181 80,54.5"
+                id="Fill-19" fill="#B2BDC6" mask="url(#mask-4)" />
+            <polygon id="Fill-20" fill="#FFFFFF" mask="url(#mask-4)"
+                points="60.1078043 62 54 55.9891158 56.1175408 53.8701581 60.0906399 57.7791152 69.8643915 48 72 50.1028235" />
+        </g>
+    </g>
+</svg>

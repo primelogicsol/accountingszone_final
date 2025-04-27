@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="115px" height="78px"
+    viewBox="0 0 115 78" version="1.1">
+    <script xmlns="" />
+    <title>Group 25-2x</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="115" height="78" />
+        <polygon id="path-3" points="0 75 69 75 69 0 0 0" />
+    </defs>
+    <g id="Homepage-Rd2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Corvee---Homepage1b" transform="translate(-797.000000, -1051.000000)">
+            <g id="Section-2" transform="translate(202.000000, 880.000000)">
+                <g id="Icons" transform="translate(0.000000, 171.000000)">
+                    <g id="Icon-3" transform="translate(541.000000, 0.000000)">
+                        <g id="Group-25" transform="translate(54.000000, 0.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1" />
+                            </mask>
+                            <g id="mask" />
+                            <g id="Group" mask="url(#mask-2)">
+                                <g transform="translate(30.000000, 3.000000)">
+                                    <path
+                                        d="M58.2481501,17.4539492 C58.2481501,24.401543 52.589031,30.034013 45.6085657,30.034013 C38.6281004,30.034013 32.9689812,24.401543 32.9689812,17.4539492 C32.9689812,10.5063554 38.6281004,4.87388543 45.6085657,4.87388543 C52.589031,4.87388543 58.2481501,10.5063554 58.2481501,17.4539492"
+                                        id="Fill-1" fill="#E7EBEE" />
+                                    <polyline id="Stroke-3" stroke="#B2BDC6" stroke-width="3" stroke-linejoin="round"
+                                        points="37.6548926 12.9199227 46.8369206 22.0587119 68.2779909 0.718609126" />
+                                    <mask id="mask-4" fill="white">
+                                        <use xlink:href="#path-3" />
+                                    </mask>
+                                    <g id="Clip-6" />
+                                    <polygon id="Fill-5" fill="#E7EBEE" mask="url(#mask-4)"
+                                        points="0 75 0 66.0739613 18.8610075 66.0739613 18.8610075 56.6878664 37.7213343 56.6878664 37.7213343 47.3017716 56.5823418 47.3017716 56.5823418 75" />
+                                    <polyline id="Stroke-7" stroke="#B2BDC6" stroke-width="3" stroke-linejoin="round"
+                                        mask="url(#mask-4)"
+                                        points="0 54.7237179 12.2746996 54.7237179 12.2746996 44.6885304 25.5187948 44.6885304 25.5187948 26.9814487" />
+                                    <polyline id="Stroke-8" stroke="#B2BDC6" stroke-width="3" stroke-linejoin="round"
+                                        mask="url(#mask-4)"
+                                        points="19.0855887 34.5887048 25.5187267 26.9818552 31.194184 34.6930474" />
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
