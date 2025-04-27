@@ -18,4 +18,3 @@
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **State Management**: React Hooks and Redux Toolkit (RTK)
-- **Deployment**: Vercel
