@@ -1586,7 +1586,7 @@ export default function Navbar() {
             </div>
           </li>
 
-          <li className="mr-4 lg:mr-10">
+          <li className="ml-auto mr-4 lg:mr-10">
             {!isAuthenticated ? (
               <div className="flex items-center gap-4">
                 <Link href="/login" className="text-xs text-black hover:text-[#fbc710] transition-colors uppercase">

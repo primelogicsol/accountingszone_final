@@ -22,13 +22,7 @@ export default function Header() {
 
         <Navbar />
 
-        <Link
-          href="/login"
-          className="justify-self-end 2xl:text-base text-sm mr-3 lg:mr-8 font-bold border rounded-2xl lg:px-4 px-2.5 py-1 bg-[#fbc710] hover:bg-[#e2b512] transition-colors cursor-pointer uppercase"
-        >
-          LOGIN
-        </Link>
-
+        {/* Phone number link is already commented out */}
         {/* <Link
           href="tel:17606860609"
           className="hidden xl:block font-bold justify-self-end hover:text-[#fbc710] transition-colors"

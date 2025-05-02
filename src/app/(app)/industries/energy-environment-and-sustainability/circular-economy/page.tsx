@@ -254,10 +254,12 @@ export default function CircularEconomyPage() {
             Our team of circular economy specialists is ready to help you develop financial frameworks that support
             regenerative business innovation and sustainable growth.
           </p>
-          <Button size="lg" variant="secondary" className="group bg-black text-white hover:bg-black/90">
-            Schedule a Consultation
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
+          <Link href="/contact/get-a-consultation">
+            <Button size="lg" variant="secondary" className="group bg-black text-white hover:bg-black/90">
+              Schedule a Consultation
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

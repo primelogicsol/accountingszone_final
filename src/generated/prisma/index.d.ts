@@ -1427,6 +1427,7 @@ export namespace Prisma {
 
   export type UserMinAggregateOutputType = {
     id: string | null
+    role: string | null
     username: string | null
     email: string | null
     password: string | null
@@ -1440,6 +1441,7 @@ export namespace Prisma {
 
   export type UserMaxAggregateOutputType = {
     id: string | null
+    role: string | null
     username: string | null
     email: string | null
     password: string | null
@@ -1453,6 +1455,7 @@ export namespace Prisma {
 
   export type UserCountAggregateOutputType = {
     id: number
+    role: number
     username: number
     email: number
     password: number
@@ -1468,6 +1471,7 @@ export namespace Prisma {
 
   export type UserMinAggregateInputType = {
     id?: true
+    role?: true
     username?: true
     email?: true
     password?: true
@@ -1481,6 +1485,7 @@ export namespace Prisma {
 
   export type UserMaxAggregateInputType = {
     id?: true
+    role?: true
     username?: true
     email?: true
     password?: true
@@ -1494,6 +1499,7 @@ export namespace Prisma {
 
   export type UserCountAggregateInputType = {
     id?: true
+    role?: true
     username?: true
     email?: true
     password?: true
@@ -1580,6 +1586,7 @@ export namespace Prisma {
 
   export type UserGroupByOutputType = {
     id: string
+    role: string
     username: string
     email: string
     password: string
@@ -1610,6 +1617,7 @@ export namespace Prisma {
 
   export type UserSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    role?: boolean
     username?: boolean
     email?: boolean
     password?: boolean
@@ -1623,6 +1631,7 @@ export namespace Prisma {
 
   export type UserSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    role?: boolean
     username?: boolean
     email?: boolean
     password?: boolean
@@ -1636,6 +1645,7 @@ export namespace Prisma {
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    role?: boolean
     username?: boolean
     email?: boolean
     password?: boolean
@@ -1649,6 +1659,7 @@ export namespace Prisma {
 
   export type UserSelectScalar = {
     id?: boolean
+    role?: boolean
     username?: boolean
     email?: boolean
     password?: boolean
@@ -1660,13 +1671,14 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "username" | "email" | "password" | "verifyCode" | "verifyCodeExpiry" | "isVerified" | "isAcceptingMessages" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "role" | "username" | "email" | "password" | "verifyCode" | "verifyCodeExpiry" | "isVerified" | "isAcceptingMessages" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
 
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      role: string
       username: string
       email: string
       password: string
@@ -2100,6 +2112,7 @@ export namespace Prisma {
    */
   interface UserFieldRefs {
     readonly id: FieldRef<"User", 'String'>
+    readonly role: FieldRef<"User", 'String'>
     readonly username: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
     readonly password: FieldRef<"User", 'String'>
@@ -2487,6 +2500,7 @@ export namespace Prisma {
 
   export type ContactMessageMinAggregateOutputType = {
     id: string | null
+    status: string | null
     name: string | null
     email: string | null
     phone: string | null
@@ -2499,6 +2513,7 @@ export namespace Prisma {
 
   export type ContactMessageMaxAggregateOutputType = {
     id: string | null
+    status: string | null
     name: string | null
     email: string | null
     phone: string | null
@@ -2511,6 +2526,7 @@ export namespace Prisma {
 
   export type ContactMessageCountAggregateOutputType = {
     id: number
+    status: number
     name: number
     email: number
     phone: number
@@ -2525,6 +2541,7 @@ export namespace Prisma {
 
   export type ContactMessageMinAggregateInputType = {
     id?: true
+    status?: true
     name?: true
     email?: true
     phone?: true
@@ -2537,6 +2554,7 @@ export namespace Prisma {
 
   export type ContactMessageMaxAggregateInputType = {
     id?: true
+    status?: true
     name?: true
     email?: true
     phone?: true
@@ -2549,6 +2567,7 @@ export namespace Prisma {
 
   export type ContactMessageCountAggregateInputType = {
     id?: true
+    status?: true
     name?: true
     email?: true
     phone?: true
@@ -2634,6 +2653,7 @@ export namespace Prisma {
 
   export type ContactMessageGroupByOutputType = {
     id: string
+    status: string
     name: string
     email: string
     phone: string
@@ -2663,6 +2683,7 @@ export namespace Prisma {
 
   export type ContactMessageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     name?: boolean
     email?: boolean
     phone?: boolean
@@ -2675,6 +2696,7 @@ export namespace Prisma {
 
   export type ContactMessageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     name?: boolean
     email?: boolean
     phone?: boolean
@@ -2687,6 +2709,7 @@ export namespace Prisma {
 
   export type ContactMessageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     name?: boolean
     email?: boolean
     phone?: boolean
@@ -2699,6 +2722,7 @@ export namespace Prisma {
 
   export type ContactMessageSelectScalar = {
     id?: boolean
+    status?: boolean
     name?: boolean
     email?: boolean
     phone?: boolean
@@ -2709,13 +2733,14 @@ export namespace Prisma {
     createdAt?: boolean
   }
 
-  export type ContactMessageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "phone" | "company" | "reason" | "subject" | "message" | "createdAt", ExtArgs["result"]["contactMessage"]>
+  export type ContactMessageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "status" | "name" | "email" | "phone" | "company" | "reason" | "subject" | "message" | "createdAt", ExtArgs["result"]["contactMessage"]>
 
   export type $ContactMessagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ContactMessage"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      status: string
       name: string
       email: string
       phone: string
@@ -3148,6 +3173,7 @@ export namespace Prisma {
    */
   interface ContactMessageFieldRefs {
     readonly id: FieldRef<"ContactMessage", 'String'>
+    readonly status: FieldRef<"ContactMessage", 'String'>
     readonly name: FieldRef<"ContactMessage", 'String'>
     readonly email: FieldRef<"ContactMessage", 'String'>
     readonly phone: FieldRef<"ContactMessage", 'String'>
@@ -3534,6 +3560,7 @@ export namespace Prisma {
 
   export type ConsultationMessageMinAggregateOutputType = {
     id: string | null
+    status: string | null
     name: string | null
     email: string | null
     phone: string | null
@@ -3546,6 +3573,7 @@ export namespace Prisma {
 
   export type ConsultationMessageMaxAggregateOutputType = {
     id: string | null
+    status: string | null
     name: string | null
     email: string | null
     phone: string | null
@@ -3558,6 +3586,7 @@ export namespace Prisma {
 
   export type ConsultationMessageCountAggregateOutputType = {
     id: number
+    status: number
     name: number
     email: number
     phone: number
@@ -3572,6 +3601,7 @@ export namespace Prisma {
 
   export type ConsultationMessageMinAggregateInputType = {
     id?: true
+    status?: true
     name?: true
     email?: true
     phone?: true
@@ -3584,6 +3614,7 @@ export namespace Prisma {
 
   export type ConsultationMessageMaxAggregateInputType = {
     id?: true
+    status?: true
     name?: true
     email?: true
     phone?: true
@@ -3596,6 +3627,7 @@ export namespace Prisma {
 
   export type ConsultationMessageCountAggregateInputType = {
     id?: true
+    status?: true
     name?: true
     email?: true
     phone?: true
@@ -3681,6 +3713,7 @@ export namespace Prisma {
 
   export type ConsultationMessageGroupByOutputType = {
     id: string
+    status: string
     name: string
     email: string
     phone: string
@@ -3710,6 +3743,7 @@ export namespace Prisma {
 
   export type ConsultationMessageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     name?: boolean
     email?: boolean
     phone?: boolean
@@ -3722,6 +3756,7 @@ export namespace Prisma {
 
   export type ConsultationMessageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     name?: boolean
     email?: boolean
     phone?: boolean
@@ -3734,6 +3769,7 @@ export namespace Prisma {
 
   export type ConsultationMessageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     name?: boolean
     email?: boolean
     phone?: boolean
@@ -3746,6 +3782,7 @@ export namespace Prisma {
 
   export type ConsultationMessageSelectScalar = {
     id?: boolean
+    status?: boolean
     name?: boolean
     email?: boolean
     phone?: boolean
@@ -3756,13 +3793,14 @@ export namespace Prisma {
     createdAt?: boolean
   }
 
-  export type ConsultationMessageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "phone" | "city" | "country" | "state" | "message" | "createdAt", ExtArgs["result"]["consultationMessage"]>
+  export type ConsultationMessageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "status" | "name" | "email" | "phone" | "city" | "country" | "state" | "message" | "createdAt", ExtArgs["result"]["consultationMessage"]>
 
   export type $ConsultationMessagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ConsultationMessage"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      status: string
       name: string
       email: string
       phone: string
@@ -4195,6 +4233,7 @@ export namespace Prisma {
    */
   interface ConsultationMessageFieldRefs {
     readonly id: FieldRef<"ConsultationMessage", 'String'>
+    readonly status: FieldRef<"ConsultationMessage", 'String'>
     readonly name: FieldRef<"ConsultationMessage", 'String'>
     readonly email: FieldRef<"ConsultationMessage", 'String'>
     readonly phone: FieldRef<"ConsultationMessage", 'String'>
@@ -5632,6 +5671,7 @@ export namespace Prisma {
 
   export type ClientInformationFormMinAggregateOutputType = {
     id: string | null
+    status: string | null
     fullName: string | null
     businessName: string | null
     phoneNumber: string | null
@@ -5664,6 +5704,7 @@ export namespace Prisma {
 
   export type ClientInformationFormMaxAggregateOutputType = {
     id: string | null
+    status: string | null
     fullName: string | null
     businessName: string | null
     phoneNumber: string | null
@@ -5696,6 +5737,7 @@ export namespace Prisma {
 
   export type ClientInformationFormCountAggregateOutputType = {
     id: number
+    status: number
     fullName: number
     businessName: number
     phoneNumber: number
@@ -5739,6 +5781,7 @@ export namespace Prisma {
 
   export type ClientInformationFormMinAggregateInputType = {
     id?: true
+    status?: true
     fullName?: true
     businessName?: true
     phoneNumber?: true
@@ -5771,6 +5814,7 @@ export namespace Prisma {
 
   export type ClientInformationFormMaxAggregateInputType = {
     id?: true
+    status?: true
     fullName?: true
     businessName?: true
     phoneNumber?: true
@@ -5803,6 +5847,7 @@ export namespace Prisma {
 
   export type ClientInformationFormCountAggregateInputType = {
     id?: true
+    status?: true
     fullName?: true
     businessName?: true
     phoneNumber?: true
@@ -5923,6 +5968,7 @@ export namespace Prisma {
 
   export type ClientInformationFormGroupByOutputType = {
     id: string
+    status: string
     fullName: string
     businessName: string | null
     phoneNumber: string
@@ -5975,6 +6021,7 @@ export namespace Prisma {
 
   export type ClientInformationFormSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     fullName?: boolean
     businessName?: boolean
     phoneNumber?: boolean
@@ -6008,6 +6055,7 @@ export namespace Prisma {
 
   export type ClientInformationFormSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     fullName?: boolean
     businessName?: boolean
     phoneNumber?: boolean
@@ -6041,6 +6089,7 @@ export namespace Prisma {
 
   export type ClientInformationFormSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     fullName?: boolean
     businessName?: boolean
     phoneNumber?: boolean
@@ -6074,6 +6123,7 @@ export namespace Prisma {
 
   export type ClientInformationFormSelectScalar = {
     id?: boolean
+    status?: boolean
     fullName?: boolean
     businessName?: boolean
     phoneNumber?: boolean
@@ -6105,13 +6155,14 @@ export namespace Prisma {
     createdAt?: boolean
   }
 
-  export type ClientInformationFormOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fullName" | "businessName" | "phoneNumber" | "email" | "address" | "preferredContactMethod" | "businessType" | "industryCategory" | "taxIdentificationNumber" | "businessRegistrationNumber" | "annualRevenueRange" | "numberOfEmployees" | "servicesRequired" | "frequencyOfService" | "specificGoalsOrNeeds" | "currentAccountingSoftware" | "preferredCommunicationSchedule" | "bankAccountDetails" | "creditLimit" | "billingAddress" | "businessRegistrationCertificate" | "taxIdentificationCertificate" | "financialStatements" | "governmentIssuedID" | "declaration" | "consent" | "signature" | "date" | "createdAt", ExtArgs["result"]["clientInformationForm"]>
+  export type ClientInformationFormOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "status" | "fullName" | "businessName" | "phoneNumber" | "email" | "address" | "preferredContactMethod" | "businessType" | "industryCategory" | "taxIdentificationNumber" | "businessRegistrationNumber" | "annualRevenueRange" | "numberOfEmployees" | "servicesRequired" | "frequencyOfService" | "specificGoalsOrNeeds" | "currentAccountingSoftware" | "preferredCommunicationSchedule" | "bankAccountDetails" | "creditLimit" | "billingAddress" | "businessRegistrationCertificate" | "taxIdentificationCertificate" | "financialStatements" | "governmentIssuedID" | "declaration" | "consent" | "signature" | "date" | "createdAt", ExtArgs["result"]["clientInformationForm"]>
 
   export type $ClientInformationFormPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ClientInformationForm"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      status: string
       fullName: string
       businessName: string | null
       phoneNumber: string
@@ -6565,6 +6616,7 @@ export namespace Prisma {
    */
   interface ClientInformationFormFieldRefs {
     readonly id: FieldRef<"ClientInformationForm", 'String'>
+    readonly status: FieldRef<"ClientInformationForm", 'String'>
     readonly fullName: FieldRef<"ClientInformationForm", 'String'>
     readonly businessName: FieldRef<"ClientInformationForm", 'String'>
     readonly phoneNumber: FieldRef<"ClientInformationForm", 'String'>
@@ -6982,6 +7034,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormMinAggregateOutputType = {
     id: string | null
+    status: string | null
     businessName: string | null
     contactPerson: string | null
     businessAddress: string | null
@@ -7013,6 +7066,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormMaxAggregateOutputType = {
     id: string | null
+    status: string | null
     businessName: string | null
     contactPerson: string | null
     businessAddress: string | null
@@ -7044,6 +7098,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormCountAggregateOutputType = {
     id: number
+    status: number
     businessName: number
     contactPerson: number
     businessAddress: number
@@ -7085,6 +7140,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormMinAggregateInputType = {
     id?: true
+    status?: true
     businessName?: true
     contactPerson?: true
     businessAddress?: true
@@ -7116,6 +7172,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormMaxAggregateInputType = {
     id?: true
+    status?: true
     businessName?: true
     contactPerson?: true
     businessAddress?: true
@@ -7147,6 +7204,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormCountAggregateInputType = {
     id?: true
+    status?: true
     businessName?: true
     contactPerson?: true
     businessAddress?: true
@@ -7265,6 +7323,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormGroupByOutputType = {
     id: string
+    status: string
     businessName: string
     contactPerson: string
     businessAddress: string
@@ -7315,6 +7374,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     businessName?: boolean
     contactPerson?: boolean
     businessAddress?: boolean
@@ -7346,6 +7406,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     businessName?: boolean
     contactPerson?: boolean
     businessAddress?: boolean
@@ -7377,6 +7438,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     businessName?: boolean
     contactPerson?: boolean
     businessAddress?: boolean
@@ -7408,6 +7470,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormSelectScalar = {
     id?: boolean
+    status?: boolean
     businessName?: boolean
     contactPerson?: boolean
     businessAddress?: boolean
@@ -7437,13 +7500,14 @@ export namespace Prisma {
     createdAt?: boolean
   }
 
-  export type PartnerApplicationFormOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "businessName" | "contactPerson" | "businessAddress" | "phoneNumber" | "email" | "website" | "typeOfBusiness" | "industryCategory" | "yearsInOperation" | "businessRegistrationNumber" | "taxIdentificationNumber" | "reasonForPartnership" | "servicesOrProductsOffered" | "geographicalCoverage" | "preferredCollaborationType" | "previousPartnerships" | "annualRevenue" | "businessLicensesOrPermits" | "insuranceCoverage" | "businessRegistrationCertificate" | "taxIdentificationCertificate" | "portfolioOrReferences" | "declaration" | "consent" | "signature" | "date" | "createdAt", ExtArgs["result"]["partnerApplicationForm"]>
+  export type PartnerApplicationFormOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "status" | "businessName" | "contactPerson" | "businessAddress" | "phoneNumber" | "email" | "website" | "typeOfBusiness" | "industryCategory" | "yearsInOperation" | "businessRegistrationNumber" | "taxIdentificationNumber" | "reasonForPartnership" | "servicesOrProductsOffered" | "geographicalCoverage" | "preferredCollaborationType" | "previousPartnerships" | "annualRevenue" | "businessLicensesOrPermits" | "insuranceCoverage" | "businessRegistrationCertificate" | "taxIdentificationCertificate" | "portfolioOrReferences" | "declaration" | "consent" | "signature" | "date" | "createdAt", ExtArgs["result"]["partnerApplicationForm"]>
 
   export type $PartnerApplicationFormPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "PartnerApplicationForm"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      status: string
       businessName: string
       contactPerson: string
       businessAddress: string
@@ -7895,6 +7959,7 @@ export namespace Prisma {
    */
   interface PartnerApplicationFormFieldRefs {
     readonly id: FieldRef<"PartnerApplicationForm", 'String'>
+    readonly status: FieldRef<"PartnerApplicationForm", 'String'>
     readonly businessName: FieldRef<"PartnerApplicationForm", 'String'>
     readonly contactPerson: FieldRef<"PartnerApplicationForm", 'String'>
     readonly businessAddress: FieldRef<"PartnerApplicationForm", 'String'>
@@ -8300,6 +8365,7 @@ export namespace Prisma {
 
   export type TaxFilingFormMinAggregateOutputType = {
     id: string | null
+    status: string | null
     name: string | null
     birthday: string | null
     phoneNumber: string | null
@@ -8324,6 +8390,7 @@ export namespace Prisma {
 
   export type TaxFilingFormMaxAggregateOutputType = {
     id: string | null
+    status: string | null
     name: string | null
     birthday: string | null
     phoneNumber: string | null
@@ -8348,6 +8415,7 @@ export namespace Prisma {
 
   export type TaxFilingFormCountAggregateOutputType = {
     id: number
+    status: number
     name: number
     birthday: number
     phoneNumber: number
@@ -8374,6 +8442,7 @@ export namespace Prisma {
 
   export type TaxFilingFormMinAggregateInputType = {
     id?: true
+    status?: true
     name?: true
     birthday?: true
     phoneNumber?: true
@@ -8398,6 +8467,7 @@ export namespace Prisma {
 
   export type TaxFilingFormMaxAggregateInputType = {
     id?: true
+    status?: true
     name?: true
     birthday?: true
     phoneNumber?: true
@@ -8422,6 +8492,7 @@ export namespace Prisma {
 
   export type TaxFilingFormCountAggregateInputType = {
     id?: true
+    status?: true
     name?: true
     birthday?: true
     phoneNumber?: true
@@ -8519,6 +8590,7 @@ export namespace Prisma {
 
   export type TaxFilingFormGroupByOutputType = {
     id: string
+    status: string
     name: string
     birthday: string
     phoneNumber: string
@@ -8560,6 +8632,7 @@ export namespace Prisma {
 
   export type TaxFilingFormSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     name?: boolean
     birthday?: boolean
     phoneNumber?: boolean
@@ -8584,6 +8657,7 @@ export namespace Prisma {
 
   export type TaxFilingFormSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     name?: boolean
     birthday?: boolean
     phoneNumber?: boolean
@@ -8608,6 +8682,7 @@ export namespace Prisma {
 
   export type TaxFilingFormSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    status?: boolean
     name?: boolean
     birthday?: boolean
     phoneNumber?: boolean
@@ -8632,6 +8707,7 @@ export namespace Prisma {
 
   export type TaxFilingFormSelectScalar = {
     id?: boolean
+    status?: boolean
     name?: boolean
     birthday?: boolean
     phoneNumber?: boolean
@@ -8654,13 +8730,14 @@ export namespace Prisma {
     createdAt?: boolean
   }
 
-  export type TaxFilingFormOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "birthday" | "phoneNumber" | "email" | "facebookName" | "instagramName" | "taxYear" | "cashAdvance" | "firstName" | "middleName" | "lastName" | "ssn" | "streetAddress" | "addressLine2" | "city" | "state" | "zipCode" | "occupation" | "refundOption" | "createdAt", ExtArgs["result"]["taxFilingForm"]>
+  export type TaxFilingFormOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "status" | "name" | "birthday" | "phoneNumber" | "email" | "facebookName" | "instagramName" | "taxYear" | "cashAdvance" | "firstName" | "middleName" | "lastName" | "ssn" | "streetAddress" | "addressLine2" | "city" | "state" | "zipCode" | "occupation" | "refundOption" | "createdAt", ExtArgs["result"]["taxFilingForm"]>
 
   export type $TaxFilingFormPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "TaxFilingForm"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      status: string
       name: string
       birthday: string
       phoneNumber: string
@@ -9105,6 +9182,7 @@ export namespace Prisma {
    */
   interface TaxFilingFormFieldRefs {
     readonly id: FieldRef<"TaxFilingForm", 'String'>
+    readonly status: FieldRef<"TaxFilingForm", 'String'>
     readonly name: FieldRef<"TaxFilingForm", 'String'>
     readonly birthday: FieldRef<"TaxFilingForm", 'String'>
     readonly phoneNumber: FieldRef<"TaxFilingForm", 'String'>
@@ -9507,6 +9585,7 @@ export namespace Prisma {
 
   export const UserScalarFieldEnum: {
     id: 'id',
+    role: 'role',
     username: 'username',
     email: 'email',
     password: 'password',
@@ -9523,6 +9602,7 @@ export namespace Prisma {
 
   export const ContactMessageScalarFieldEnum: {
     id: 'id',
+    status: 'status',
     name: 'name',
     email: 'email',
     phone: 'phone',
@@ -9538,6 +9618,7 @@ export namespace Prisma {
 
   export const ConsultationMessageScalarFieldEnum: {
     id: 'id',
+    status: 'status',
     name: 'name',
     email: 'email',
     phone: 'phone',
@@ -9564,6 +9645,7 @@ export namespace Prisma {
 
   export const ClientInformationFormScalarFieldEnum: {
     id: 'id',
+    status: 'status',
     fullName: 'fullName',
     businessName: 'businessName',
     phoneNumber: 'phoneNumber',
@@ -9600,6 +9682,7 @@ export namespace Prisma {
 
   export const PartnerApplicationFormScalarFieldEnum: {
     id: 'id',
+    status: 'status',
     businessName: 'businessName',
     contactPerson: 'contactPerson',
     businessAddress: 'businessAddress',
@@ -9634,6 +9717,7 @@ export namespace Prisma {
 
   export const TaxFilingFormScalarFieldEnum: {
     id: 'id',
+    status: 'status',
     name: 'name',
     birthday: 'birthday',
     phoneNumber: 'phoneNumber',
@@ -9759,6 +9843,7 @@ export namespace Prisma {
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
     id?: StringFilter<"User"> | string
+    role?: StringFilter<"User"> | string
     username?: StringFilter<"User"> | string
     email?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
@@ -9772,6 +9857,7 @@ export namespace Prisma {
 
   export type UserOrderByWithRelationInput = {
     id?: SortOrder
+    role?: SortOrder
     username?: SortOrder
     email?: SortOrder
     password?: SortOrder
@@ -9790,6 +9876,7 @@ export namespace Prisma {
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
+    role?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
     verifyCode?: StringNullableFilter<"User"> | string | null
     verifyCodeExpiry?: DateTimeNullableFilter<"User"> | Date | string | null
@@ -9801,6 +9888,7 @@ export namespace Prisma {
 
   export type UserOrderByWithAggregationInput = {
     id?: SortOrder
+    role?: SortOrder
     username?: SortOrder
     email?: SortOrder
     password?: SortOrder
@@ -9820,6 +9908,7 @@ export namespace Prisma {
     OR?: UserScalarWhereWithAggregatesInput[]
     NOT?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"User"> | string
+    role?: StringWithAggregatesFilter<"User"> | string
     username?: StringWithAggregatesFilter<"User"> | string
     email?: StringWithAggregatesFilter<"User"> | string
     password?: StringWithAggregatesFilter<"User"> | string
@@ -9836,6 +9925,7 @@ export namespace Prisma {
     OR?: ContactMessageWhereInput[]
     NOT?: ContactMessageWhereInput | ContactMessageWhereInput[]
     id?: StringFilter<"ContactMessage"> | string
+    status?: StringFilter<"ContactMessage"> | string
     name?: StringFilter<"ContactMessage"> | string
     email?: StringFilter<"ContactMessage"> | string
     phone?: StringFilter<"ContactMessage"> | string
@@ -9848,6 +9938,7 @@ export namespace Prisma {
 
   export type ContactMessageOrderByWithRelationInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrder
@@ -9863,6 +9954,7 @@ export namespace Prisma {
     AND?: ContactMessageWhereInput | ContactMessageWhereInput[]
     OR?: ContactMessageWhereInput[]
     NOT?: ContactMessageWhereInput | ContactMessageWhereInput[]
+    status?: StringFilter<"ContactMessage"> | string
     name?: StringFilter<"ContactMessage"> | string
     email?: StringFilter<"ContactMessage"> | string
     phone?: StringFilter<"ContactMessage"> | string
@@ -9875,6 +9967,7 @@ export namespace Prisma {
 
   export type ContactMessageOrderByWithAggregationInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrder
@@ -9893,6 +9986,7 @@ export namespace Prisma {
     OR?: ContactMessageScalarWhereWithAggregatesInput[]
     NOT?: ContactMessageScalarWhereWithAggregatesInput | ContactMessageScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"ContactMessage"> | string
+    status?: StringWithAggregatesFilter<"ContactMessage"> | string
     name?: StringWithAggregatesFilter<"ContactMessage"> | string
     email?: StringWithAggregatesFilter<"ContactMessage"> | string
     phone?: StringWithAggregatesFilter<"ContactMessage"> | string
@@ -9908,6 +10002,7 @@ export namespace Prisma {
     OR?: ConsultationMessageWhereInput[]
     NOT?: ConsultationMessageWhereInput | ConsultationMessageWhereInput[]
     id?: StringFilter<"ConsultationMessage"> | string
+    status?: StringFilter<"ConsultationMessage"> | string
     name?: StringFilter<"ConsultationMessage"> | string
     email?: StringFilter<"ConsultationMessage"> | string
     phone?: StringFilter<"ConsultationMessage"> | string
@@ -9920,6 +10015,7 @@ export namespace Prisma {
 
   export type ConsultationMessageOrderByWithRelationInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrder
@@ -9935,6 +10031,7 @@ export namespace Prisma {
     AND?: ConsultationMessageWhereInput | ConsultationMessageWhereInput[]
     OR?: ConsultationMessageWhereInput[]
     NOT?: ConsultationMessageWhereInput | ConsultationMessageWhereInput[]
+    status?: StringFilter<"ConsultationMessage"> | string
     name?: StringFilter<"ConsultationMessage"> | string
     email?: StringFilter<"ConsultationMessage"> | string
     phone?: StringFilter<"ConsultationMessage"> | string
@@ -9947,6 +10044,7 @@ export namespace Prisma {
 
   export type ConsultationMessageOrderByWithAggregationInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrder
@@ -9965,6 +10063,7 @@ export namespace Prisma {
     OR?: ConsultationMessageScalarWhereWithAggregatesInput[]
     NOT?: ConsultationMessageScalarWhereWithAggregatesInput | ConsultationMessageScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"ConsultationMessage"> | string
+    status?: StringWithAggregatesFilter<"ConsultationMessage"> | string
     name?: StringWithAggregatesFilter<"ConsultationMessage"> | string
     email?: StringWithAggregatesFilter<"ConsultationMessage"> | string
     phone?: StringWithAggregatesFilter<"ConsultationMessage"> | string
@@ -10034,6 +10133,7 @@ export namespace Prisma {
     OR?: ClientInformationFormWhereInput[]
     NOT?: ClientInformationFormWhereInput | ClientInformationFormWhereInput[]
     id?: StringFilter<"ClientInformationForm"> | string
+    status?: StringFilter<"ClientInformationForm"> | string
     fullName?: StringFilter<"ClientInformationForm"> | string
     businessName?: StringNullableFilter<"ClientInformationForm"> | string | null
     phoneNumber?: StringFilter<"ClientInformationForm"> | string
@@ -10067,6 +10167,7 @@ export namespace Prisma {
 
   export type ClientInformationFormOrderByWithRelationInput = {
     id?: SortOrder
+    status?: SortOrder
     fullName?: SortOrder
     businessName?: SortOrderInput | SortOrder
     phoneNumber?: SortOrder
@@ -10103,6 +10204,7 @@ export namespace Prisma {
     AND?: ClientInformationFormWhereInput | ClientInformationFormWhereInput[]
     OR?: ClientInformationFormWhereInput[]
     NOT?: ClientInformationFormWhereInput | ClientInformationFormWhereInput[]
+    status?: StringFilter<"ClientInformationForm"> | string
     fullName?: StringFilter<"ClientInformationForm"> | string
     businessName?: StringNullableFilter<"ClientInformationForm"> | string | null
     phoneNumber?: StringFilter<"ClientInformationForm"> | string
@@ -10136,6 +10238,7 @@ export namespace Prisma {
 
   export type ClientInformationFormOrderByWithAggregationInput = {
     id?: SortOrder
+    status?: SortOrder
     fullName?: SortOrder
     businessName?: SortOrderInput | SortOrder
     phoneNumber?: SortOrder
@@ -10177,6 +10280,7 @@ export namespace Prisma {
     OR?: ClientInformationFormScalarWhereWithAggregatesInput[]
     NOT?: ClientInformationFormScalarWhereWithAggregatesInput | ClientInformationFormScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"ClientInformationForm"> | string
+    status?: StringWithAggregatesFilter<"ClientInformationForm"> | string
     fullName?: StringWithAggregatesFilter<"ClientInformationForm"> | string
     businessName?: StringNullableWithAggregatesFilter<"ClientInformationForm"> | string | null
     phoneNumber?: StringWithAggregatesFilter<"ClientInformationForm"> | string
@@ -10213,6 +10317,7 @@ export namespace Prisma {
     OR?: PartnerApplicationFormWhereInput[]
     NOT?: PartnerApplicationFormWhereInput | PartnerApplicationFormWhereInput[]
     id?: StringFilter<"PartnerApplicationForm"> | string
+    status?: StringFilter<"PartnerApplicationForm"> | string
     businessName?: StringFilter<"PartnerApplicationForm"> | string
     contactPerson?: StringFilter<"PartnerApplicationForm"> | string
     businessAddress?: StringFilter<"PartnerApplicationForm"> | string
@@ -10244,6 +10349,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormOrderByWithRelationInput = {
     id?: SortOrder
+    status?: SortOrder
     businessName?: SortOrder
     contactPerson?: SortOrder
     businessAddress?: SortOrder
@@ -10278,6 +10384,7 @@ export namespace Prisma {
     AND?: PartnerApplicationFormWhereInput | PartnerApplicationFormWhereInput[]
     OR?: PartnerApplicationFormWhereInput[]
     NOT?: PartnerApplicationFormWhereInput | PartnerApplicationFormWhereInput[]
+    status?: StringFilter<"PartnerApplicationForm"> | string
     businessName?: StringFilter<"PartnerApplicationForm"> | string
     contactPerson?: StringFilter<"PartnerApplicationForm"> | string
     businessAddress?: StringFilter<"PartnerApplicationForm"> | string
@@ -10309,6 +10416,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormOrderByWithAggregationInput = {
     id?: SortOrder
+    status?: SortOrder
     businessName?: SortOrder
     contactPerson?: SortOrder
     businessAddress?: SortOrder
@@ -10348,6 +10456,7 @@ export namespace Prisma {
     OR?: PartnerApplicationFormScalarWhereWithAggregatesInput[]
     NOT?: PartnerApplicationFormScalarWhereWithAggregatesInput | PartnerApplicationFormScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"PartnerApplicationForm"> | string
+    status?: StringWithAggregatesFilter<"PartnerApplicationForm"> | string
     businessName?: StringWithAggregatesFilter<"PartnerApplicationForm"> | string
     contactPerson?: StringWithAggregatesFilter<"PartnerApplicationForm"> | string
     businessAddress?: StringWithAggregatesFilter<"PartnerApplicationForm"> | string
@@ -10382,6 +10491,7 @@ export namespace Prisma {
     OR?: TaxFilingFormWhereInput[]
     NOT?: TaxFilingFormWhereInput | TaxFilingFormWhereInput[]
     id?: StringFilter<"TaxFilingForm"> | string
+    status?: StringFilter<"TaxFilingForm"> | string
     name?: StringFilter<"TaxFilingForm"> | string
     birthday?: StringFilter<"TaxFilingForm"> | string
     phoneNumber?: StringFilter<"TaxFilingForm"> | string
@@ -10406,6 +10516,7 @@ export namespace Prisma {
 
   export type TaxFilingFormOrderByWithRelationInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     birthday?: SortOrder
     phoneNumber?: SortOrder
@@ -10433,6 +10544,7 @@ export namespace Prisma {
     AND?: TaxFilingFormWhereInput | TaxFilingFormWhereInput[]
     OR?: TaxFilingFormWhereInput[]
     NOT?: TaxFilingFormWhereInput | TaxFilingFormWhereInput[]
+    status?: StringFilter<"TaxFilingForm"> | string
     name?: StringFilter<"TaxFilingForm"> | string
     birthday?: StringFilter<"TaxFilingForm"> | string
     phoneNumber?: StringFilter<"TaxFilingForm"> | string
@@ -10457,6 +10569,7 @@ export namespace Prisma {
 
   export type TaxFilingFormOrderByWithAggregationInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     birthday?: SortOrder
     phoneNumber?: SortOrder
@@ -10487,6 +10600,7 @@ export namespace Prisma {
     OR?: TaxFilingFormScalarWhereWithAggregatesInput[]
     NOT?: TaxFilingFormScalarWhereWithAggregatesInput | TaxFilingFormScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"TaxFilingForm"> | string
+    status?: StringWithAggregatesFilter<"TaxFilingForm"> | string
     name?: StringWithAggregatesFilter<"TaxFilingForm"> | string
     birthday?: StringWithAggregatesFilter<"TaxFilingForm"> | string
     phoneNumber?: StringWithAggregatesFilter<"TaxFilingForm"> | string
@@ -10511,6 +10625,7 @@ export namespace Prisma {
 
   export type UserCreateInput = {
     id?: string
+    role?: string
     username: string
     email: string
     password: string
@@ -10524,6 +10639,7 @@ export namespace Prisma {
 
   export type UserUncheckedCreateInput = {
     id?: string
+    role?: string
     username: string
     email: string
     password: string
@@ -10537,6 +10653,7 @@ export namespace Prisma {
 
   export type UserUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
@@ -10550,6 +10667,7 @@ export namespace Prisma {
 
   export type UserUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
@@ -10563,6 +10681,7 @@ export namespace Prisma {
 
   export type UserCreateManyInput = {
     id?: string
+    role?: string
     username: string
     email: string
     password: string
@@ -10576,6 +10695,7 @@ export namespace Prisma {
 
   export type UserUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
@@ -10589,6 +10709,7 @@ export namespace Prisma {
 
   export type UserUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
@@ -10602,6 +10723,7 @@ export namespace Prisma {
 
   export type ContactMessageCreateInput = {
     id?: string
+    status?: string
     name: string
     email: string
     phone: string
@@ -10614,6 +10736,7 @@ export namespace Prisma {
 
   export type ContactMessageUncheckedCreateInput = {
     id?: string
+    status?: string
     name: string
     email: string
     phone: string
@@ -10626,6 +10749,7 @@ export namespace Prisma {
 
   export type ContactMessageUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
@@ -10638,6 +10762,7 @@ export namespace Prisma {
 
   export type ContactMessageUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
@@ -10650,6 +10775,7 @@ export namespace Prisma {
 
   export type ContactMessageCreateManyInput = {
     id?: string
+    status?: string
     name: string
     email: string
     phone: string
@@ -10662,6 +10788,7 @@ export namespace Prisma {
 
   export type ContactMessageUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
@@ -10674,6 +10801,7 @@ export namespace Prisma {
 
   export type ContactMessageUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
@@ -10686,6 +10814,7 @@ export namespace Prisma {
 
   export type ConsultationMessageCreateInput = {
     id?: string
+    status?: string
     name: string
     email: string
     phone: string
@@ -10698,6 +10827,7 @@ export namespace Prisma {
 
   export type ConsultationMessageUncheckedCreateInput = {
     id?: string
+    status?: string
     name: string
     email: string
     phone: string
@@ -10710,6 +10840,7 @@ export namespace Prisma {
 
   export type ConsultationMessageUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
@@ -10722,6 +10853,7 @@ export namespace Prisma {
 
   export type ConsultationMessageUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
@@ -10734,6 +10866,7 @@ export namespace Prisma {
 
   export type ConsultationMessageCreateManyInput = {
     id?: string
+    status?: string
     name: string
     email: string
     phone: string
@@ -10746,6 +10879,7 @@ export namespace Prisma {
 
   export type ConsultationMessageUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
@@ -10758,6 +10892,7 @@ export namespace Prisma {
 
   export type ConsultationMessageUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
@@ -10823,6 +10958,7 @@ export namespace Prisma {
 
   export type ClientInformationFormCreateInput = {
     id?: string
+    status?: string
     fullName: string
     businessName?: string | null
     phoneNumber: string
@@ -10856,6 +10992,7 @@ export namespace Prisma {
 
   export type ClientInformationFormUncheckedCreateInput = {
     id?: string
+    status?: string
     fullName: string
     businessName?: string | null
     phoneNumber: string
@@ -10889,6 +11026,7 @@ export namespace Prisma {
 
   export type ClientInformationFormUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     fullName?: StringFieldUpdateOperationsInput | string
     businessName?: NullableStringFieldUpdateOperationsInput | string | null
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -10922,6 +11060,7 @@ export namespace Prisma {
 
   export type ClientInformationFormUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     fullName?: StringFieldUpdateOperationsInput | string
     businessName?: NullableStringFieldUpdateOperationsInput | string | null
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -10955,6 +11094,7 @@ export namespace Prisma {
 
   export type ClientInformationFormCreateManyInput = {
     id?: string
+    status?: string
     fullName: string
     businessName?: string | null
     phoneNumber: string
@@ -10988,6 +11128,7 @@ export namespace Prisma {
 
   export type ClientInformationFormUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     fullName?: StringFieldUpdateOperationsInput | string
     businessName?: NullableStringFieldUpdateOperationsInput | string | null
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -11021,6 +11162,7 @@ export namespace Prisma {
 
   export type ClientInformationFormUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     fullName?: StringFieldUpdateOperationsInput | string
     businessName?: NullableStringFieldUpdateOperationsInput | string | null
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -11054,6 +11196,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormCreateInput = {
     id?: string
+    status?: string
     businessName: string
     contactPerson: string
     businessAddress: string
@@ -11085,6 +11228,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormUncheckedCreateInput = {
     id?: string
+    status?: string
     businessName: string
     contactPerson: string
     businessAddress: string
@@ -11116,6 +11260,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     businessName?: StringFieldUpdateOperationsInput | string
     contactPerson?: StringFieldUpdateOperationsInput | string
     businessAddress?: StringFieldUpdateOperationsInput | string
@@ -11147,6 +11292,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     businessName?: StringFieldUpdateOperationsInput | string
     contactPerson?: StringFieldUpdateOperationsInput | string
     businessAddress?: StringFieldUpdateOperationsInput | string
@@ -11178,6 +11324,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormCreateManyInput = {
     id?: string
+    status?: string
     businessName: string
     contactPerson: string
     businessAddress: string
@@ -11209,6 +11356,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     businessName?: StringFieldUpdateOperationsInput | string
     contactPerson?: StringFieldUpdateOperationsInput | string
     businessAddress?: StringFieldUpdateOperationsInput | string
@@ -11240,6 +11388,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     businessName?: StringFieldUpdateOperationsInput | string
     contactPerson?: StringFieldUpdateOperationsInput | string
     businessAddress?: StringFieldUpdateOperationsInput | string
@@ -11271,6 +11420,7 @@ export namespace Prisma {
 
   export type TaxFilingFormCreateInput = {
     id?: string
+    status?: string
     name: string
     birthday: string
     phoneNumber: string
@@ -11295,6 +11445,7 @@ export namespace Prisma {
 
   export type TaxFilingFormUncheckedCreateInput = {
     id?: string
+    status?: string
     name: string
     birthday: string
     phoneNumber: string
@@ -11319,6 +11470,7 @@ export namespace Prisma {
 
   export type TaxFilingFormUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     birthday?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -11343,6 +11495,7 @@ export namespace Prisma {
 
   export type TaxFilingFormUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     birthday?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -11367,6 +11520,7 @@ export namespace Prisma {
 
   export type TaxFilingFormCreateManyInput = {
     id?: string
+    status?: string
     name: string
     birthday: string
     phoneNumber: string
@@ -11391,6 +11545,7 @@ export namespace Prisma {
 
   export type TaxFilingFormUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     birthday?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -11415,6 +11570,7 @@ export namespace Prisma {
 
   export type TaxFilingFormUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     birthday?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -11501,6 +11657,7 @@ export namespace Prisma {
 
   export type UserCountOrderByAggregateInput = {
     id?: SortOrder
+    role?: SortOrder
     username?: SortOrder
     email?: SortOrder
     password?: SortOrder
@@ -11514,6 +11671,7 @@ export namespace Prisma {
 
   export type UserMaxOrderByAggregateInput = {
     id?: SortOrder
+    role?: SortOrder
     username?: SortOrder
     email?: SortOrder
     password?: SortOrder
@@ -11527,6 +11685,7 @@ export namespace Prisma {
 
   export type UserMinOrderByAggregateInput = {
     id?: SortOrder
+    role?: SortOrder
     username?: SortOrder
     email?: SortOrder
     password?: SortOrder
@@ -11612,6 +11771,7 @@ export namespace Prisma {
 
   export type ContactMessageCountOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrder
@@ -11624,6 +11784,7 @@ export namespace Prisma {
 
   export type ContactMessageMaxOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrder
@@ -11636,6 +11797,7 @@ export namespace Prisma {
 
   export type ContactMessageMinOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrder
@@ -11648,6 +11810,7 @@ export namespace Prisma {
 
   export type ConsultationMessageCountOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrder
@@ -11660,6 +11823,7 @@ export namespace Prisma {
 
   export type ConsultationMessageMaxOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrder
@@ -11672,6 +11836,7 @@ export namespace Prisma {
 
   export type ConsultationMessageMinOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrder
@@ -11795,6 +11960,7 @@ export namespace Prisma {
 
   export type ClientInformationFormCountOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     fullName?: SortOrder
     businessName?: SortOrder
     phoneNumber?: SortOrder
@@ -11832,6 +11998,7 @@ export namespace Prisma {
 
   export type ClientInformationFormMaxOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     fullName?: SortOrder
     businessName?: SortOrder
     phoneNumber?: SortOrder
@@ -11864,6 +12031,7 @@ export namespace Prisma {
 
   export type ClientInformationFormMinOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     fullName?: SortOrder
     businessName?: SortOrder
     phoneNumber?: SortOrder
@@ -11916,6 +12084,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormCountOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     businessName?: SortOrder
     contactPerson?: SortOrder
     businessAddress?: SortOrder
@@ -11951,6 +12120,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormMaxOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     businessName?: SortOrder
     contactPerson?: SortOrder
     businessAddress?: SortOrder
@@ -11982,6 +12152,7 @@ export namespace Prisma {
 
   export type PartnerApplicationFormMinOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     businessName?: SortOrder
     contactPerson?: SortOrder
     businessAddress?: SortOrder
@@ -12017,6 +12188,7 @@ export namespace Prisma {
 
   export type TaxFilingFormCountOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     birthday?: SortOrder
     phoneNumber?: SortOrder
@@ -12041,6 +12213,7 @@ export namespace Prisma {
 
   export type TaxFilingFormMaxOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     birthday?: SortOrder
     phoneNumber?: SortOrder
@@ -12065,6 +12238,7 @@ export namespace Prisma {
 
   export type TaxFilingFormMinOrderByAggregateInput = {
     id?: SortOrder
+    status?: SortOrder
     name?: SortOrder
     birthday?: SortOrder
     phoneNumber?: SortOrder

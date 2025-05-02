@@ -119,6 +119,7 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
+  role: 'role',
   username: 'username',
   email: 'email',
   password: 'password',
@@ -132,6 +133,7 @@ exports.Prisma.UserScalarFieldEnum = {
 
 exports.Prisma.ContactMessageScalarFieldEnum = {
   id: 'id',
+  status: 'status',
   name: 'name',
   email: 'email',
   phone: 'phone',
@@ -144,6 +146,7 @@ exports.Prisma.ContactMessageScalarFieldEnum = {
 
 exports.Prisma.ConsultationMessageScalarFieldEnum = {
   id: 'id',
+  status: 'status',
   name: 'name',
   email: 'email',
   phone: 'phone',
@@ -164,6 +167,7 @@ exports.Prisma.TaxScenarioScalarFieldEnum = {
 
 exports.Prisma.ClientInformationFormScalarFieldEnum = {
   id: 'id',
+  status: 'status',
   fullName: 'fullName',
   businessName: 'businessName',
   phoneNumber: 'phoneNumber',
@@ -197,6 +201,7 @@ exports.Prisma.ClientInformationFormScalarFieldEnum = {
 
 exports.Prisma.PartnerApplicationFormScalarFieldEnum = {
   id: 'id',
+  status: 'status',
   businessName: 'businessName',
   contactPerson: 'contactPerson',
   businessAddress: 'businessAddress',
@@ -228,6 +233,7 @@ exports.Prisma.PartnerApplicationFormScalarFieldEnum = {
 
 exports.Prisma.TaxFilingFormScalarFieldEnum = {
   id: 'id',
+  status: 'status',
   name: 'name',
   birthday: 'birthday',
   phoneNumber: 'phoneNumber',

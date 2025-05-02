@@ -16,6 +16,7 @@ datasource db {
 
 model User {
   id                  String    @id @default(cuid())
+  role                String    @default("user")
   username            String    @unique
   email               String    @unique
   password            String
@@ -29,6 +30,7 @@ model User {
 
 model ContactMessage {
   id        String   @id @default(cuid())
+  status    String   @default("new")
   name      String
   email     String
   phone     String
@@ -41,6 +43,7 @@ model ContactMessage {
 
 model ConsultationMessage {
   id        String   @id @default(cuid())
+  status    String   @default("new")
   name      String
   email     String
   phone     String
@@ -62,6 +65,7 @@ model TaxScenario {
 
 model ClientInformationForm {
   id                     String  @id @default(cuid())
+  status                 String  @default("pending")
   fullName               String
   businessName           String?
   phoneNumber            String
@@ -100,6 +104,7 @@ model ClientInformationForm {
 
 model PartnerApplicationForm {
   id              String  @id @default(cuid())
+  status          String  @default("pending")
   businessName    String
   contactPerson   String
   businessAddress String
@@ -136,6 +141,7 @@ model PartnerApplicationForm {
 
 model TaxFilingForm {
   id            String   @id @default(cuid())
+  status        String   @default("pending")
   name          String
   birthday      String
   phoneNumber   String

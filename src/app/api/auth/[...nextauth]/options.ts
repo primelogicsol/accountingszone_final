@@ -46,6 +46,7 @@ export const authOptions: NextAuthOptions = {
             username: user.username,
             isVerified: user.isVerified,
             isAcceptingMessages: user.isAcceptingMessages,
+            role: user.role,
           };
         } else {
           throw new Error("Invalid email/username or password");
@@ -61,6 +62,7 @@ export const authOptions: NextAuthOptions = {
         session.user.isVerified = token.isVerified as boolean;
         session.user.isAcceptingMessages = token.isAcceptingMessages as boolean;
         session.user.username = token.username as string;
+        session.user.role = token.role as string;
       }
       return session;
     },
@@ -71,6 +73,7 @@ export const authOptions: NextAuthOptions = {
         token.isVerified = user.isVerified;
         token.isAcceptingMessages = user.isAcceptingMessages;
         token.username = user.username;
+        taken.role = user.role;
       }
       return token;
     },

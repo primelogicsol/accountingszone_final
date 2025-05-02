@@ -7,6 +7,7 @@ declare module "next-auth" {
       username: string;
       isVerified: boolean;
       isAcceptingMessages: boolean;
+      role: string; // for dashboard admin
     } & DefaultSession["user"];
   }
 
@@ -15,6 +16,7 @@ declare module "next-auth" {
     username: string;
     isVerified: boolean;
     isAcceptingMessages: boolean;
+    role: string;
   }
 }
 
@@ -25,5 +27,6 @@ declare module "next-auth/jwt" {
     username: string;
     isVerified: boolean;
     isAcceptingMessages: boolean;
+    role: string;
   }
 }

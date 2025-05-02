@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';  // Import shared client instance
+import { prisma } from '@/lib/prisma'; 
 import { z } from 'zod';
 
 // Validation schema for consultation form

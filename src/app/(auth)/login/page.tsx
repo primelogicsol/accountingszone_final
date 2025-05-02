@@ -125,9 +125,9 @@ export default function Login() {
                 "Log In"
               )}
             </Button>
-            <Button variant="outline" className="w-full rounded-3xl">
+            {/* <Button variant="outline" className="w-full rounded-3xl">
               Login with Google
-            </Button>
+            </Button> */}
           </form>
         </Form>
         <div className="text-center mt-4">
