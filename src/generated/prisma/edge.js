@@ -292,12 +292,11 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": null
+        "value": "postgresql://accounting_zone_user:accountingzone@localhost:5432/accounting_zone_db?schema=public"
       }
     }
   },

@@ -12,9 +12,9 @@ export default function Header() {
           className="relative pl-[10px] before:content-[''] before:absolute before:top-0 before:left-0 before:w-[32px] before:h-full before:border-[1.5px] before:border-solid before:border-[#fbc710] before:border-r-0 overflow-hidden max-w-[110px]"
         >
           <Image
-            src="/logo/Accounting Zone (4).png"
+            src="/logo/Accountings.png"
             alt="Accounting Zone Logo"
-            width={40}
+            width={120}
             height={40}
             className="w-full h-auto"
           />

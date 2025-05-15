@@ -1,3 +1,5 @@
+"use client"
+
 import { ArrowRight, Cloud, Shield, FileText, History, Link, Upload, FolderOpen, Search } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -18,13 +20,18 @@ export default function CloudBasedDocumentStorage() {
                   Secure, scalable, and accessible storage for financial records, tax documents, and business reports.
                 </p>
               </div>
-              <div className="mx-auto flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50">
-                  Start Storing Documents
+              <div className="mx-auto">
+                <Button
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50"
+                  onClick={() => {
+                    const overviewSection = document.getElementById("overview")
+                    if (overviewSection) {
+                      overviewSection.scrollIntoView({ behavior: "smooth" })
+                    }
+                  }}
+                >
+                  Explore Cloud-Based Document Storage
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline" className="border-[#fbc710] text-black hover:bg-[#fbc710]/10">
-                  Learn More
                 </Button>
               </div>
             </div>
@@ -87,48 +94,48 @@ export default function CloudBasedDocumentStorage() {
               </p>
             </div>
             <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 mt-8 max-w-6xl">
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <Cloud className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Secure Cloud Backup & Storage</CardTitle>
+                  <CardTitle className="text-center">Secure Cloud Backup & Storage</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Protects against data loss.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <FileText className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Automated Document Categorization</CardTitle>
+                  <CardTitle className="text-center">Automated Document Categorization</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">AI-driven sorting of receipts and invoices.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <Shield className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Encrypted Access Control</CardTitle>
+                  <CardTitle className="text-center">Encrypted Access Control</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Only authorized users can view files.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <History className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Version Control & Audit Trail</CardTitle>
+                  <CardTitle className="text-center">Version Control & Audit Trail</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Keep track of document edits and updates.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <Link className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Integration with Tax & Accounting Software</CardTitle>
+                  <CardTitle className="text-center">Integration with Tax & Accounting Software</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Streamlines record-keeping.</p>
                 </CardContent>
               </Card>

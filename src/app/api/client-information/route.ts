@@ -1,6 +1,20 @@
+
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { uploadFile } from "@/lib/cloudinary";
+
+// Set the file size limit for this specific API route
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '10mb' // 10MB limit
+    },
+    responseLimit: false
+  }
+};
+
+// Maximum file size (5MB per file)
+const MAX_FILE_SIZE = 5 * 1024 * 1024;
 
 export async function POST(request: Request) {
   try {
@@ -11,6 +25,21 @@ export async function POST(request: Request) {
     const taxIdentificationCertificate = formData.get("taxIdentificationCertificate") as File;
     const financialStatements = formData.get("financialStatements") as File;
     const governmentIssuedID = formData.get("governmentIssuedID") as File;
+    
+    // Validate file sizes on the server side
+    const validateFileSize = (file: File | null) => {
+      if (!file) return true;
+      if (file.size > MAX_FILE_SIZE) {
+        throw new Error(`File ${file.name} exceeds the maximum size limit of 5MB`);
+      }
+      return true;
+    };
+    
+    // Validate each file
+    validateFileSize(businessRegistrationCertificate);
+    validateFileSize(taxIdentificationCertificate);
+    validateFileSize(financialStatements);
+    validateFileSize(governmentIssuedID);
     
     // Upload files to Cloudinary
     let businessRegistrationCertificateUrl = "";
@@ -120,8 +149,17 @@ export async function POST(request: Request) {
       { message: "Client information submitted successfully" },
       { status: 201 }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error in client-information:", error);
+    
+    // Return specific error message for file size issues
+    if (error.message && error.message.includes('exceeds the maximum size')) {
+      return NextResponse.json(
+        { message: error.message },
+        { status: 413 } // Payload Too Large
+      );
+    }
+    
     return NextResponse.json(
       { message: "An error occurred while submitting client information" },
       { status: 500 }

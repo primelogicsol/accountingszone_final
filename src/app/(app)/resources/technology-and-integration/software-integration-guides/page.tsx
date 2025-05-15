@@ -1,3 +1,5 @@
+"use client"
+
 import { ArrowRight, FileText, Link, RefreshCw, AlertCircle, Code, BookOpen, Wrench } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -18,13 +20,18 @@ export default function SoftwareIntegrationGuides() {
                   Seamlessly connect your tax and accounting platforms to enhance efficiency and reduce errors.
                 </p>
               </div>
-              <div className="mx-auto flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50">
-                  Browse Guides
+              <div className="mx-auto">
+                <Button
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50"
+                  onClick={() => {
+                    const overviewSection = document.getElementById("overview")
+                    if (overviewSection) {
+                      overviewSection.scrollIntoView({ behavior: "smooth" })
+                    }
+                  }}
+                >
+                  Explore Software Integration Guides
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline" className="border-[#fbc710] text-black hover:bg-[#fbc710]/10">
-                  Request Integration
                 </Button>
               </div>
             </div>
@@ -87,48 +94,48 @@ export default function SoftwareIntegrationGuides() {
               </p>
             </div>
             <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 mt-8 max-w-6xl">
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <FileText className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Step-by-Step Software Setup Guides</CardTitle>
+                  <CardTitle className="text-center">Step-by-Step Software Setup Guides</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Easy-to-follow instructions.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <Link className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Integration with Leading Accounting Platforms</CardTitle>
+                  <CardTitle className="text-center">Integration with Leading Accounting Platforms</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">QuickBooks, FreshBooks, Xero, and more.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <RefreshCw className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Automated Data Sync</CardTitle>
+                  <CardTitle className="text-center">Automated Data Sync</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Eliminates manual data entry.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <AlertCircle className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Error Resolution & Troubleshooting Assistance</CardTitle>
+                  <CardTitle className="text-center">Error Resolution & Troubleshooting Assistance</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Minimize integration issues.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <Code className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>API Connectivity for Custom Workflows</CardTitle>
+                  <CardTitle className="text-center">API Connectivity for Custom Workflows</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Advanced options for developers.</p>
                 </CardContent>
               </Card>

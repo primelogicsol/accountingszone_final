@@ -1,3 +1,5 @@
+"use client"
+
 import { ArrowRight, Shield, Lock, Key, FileCheck, AlertTriangle, Eye, Bell, UserCheck } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -17,13 +19,18 @@ export default function Security() {
                   industry standards.
                 </p>
               </div>
-              <div className="mx-auto flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50">
-                  Learn About Security
+              <div className="mx-auto">
+                <Button
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50"
+                  onClick={() => {
+                    const overviewSection = document.getElementById("overview")
+                    if (overviewSection) {
+                      overviewSection.scrollIntoView({ behavior: "smooth" })
+                    }
+                  }}
+                >
+                  Explore Security
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline" className="border-[#fbc710] text-black hover:bg-[#fbc710]/10">
-                  Security Compliance
                 </Button>
               </div>
             </div>
@@ -87,48 +94,48 @@ export default function Security() {
               </p>
             </div>
             <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 mt-8 max-w-6xl">
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <Lock className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>End-to-End Encryption</CardTitle>
+                  <CardTitle className="text-center">End-to-End Encryption</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Ensures data confidentiality.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <Key className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Multi-Factor Authentication (MFA)</CardTitle>
+                  <CardTitle className="text-center">Multi-Factor Authentication (MFA)</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Adds an extra layer of protection.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <Eye className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Regular Security Audits</CardTitle>
+                  <CardTitle className="text-center">Regular Security Audits</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Proactive risk assessments to prevent breaches.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <Shield className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Compliance with Industry Standards</CardTitle>
+                  <CardTitle className="text-center">Compliance with Industry Standards</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">SOC 2, GDPR, and IRS data protection guidelines.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <AlertTriangle className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Real-Time Threat Monitoring</CardTitle>
+                  <CardTitle className="text-center">Real-Time Threat Monitoring</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">AI-driven threat detection and response.</p>
                 </CardContent>
               </Card>

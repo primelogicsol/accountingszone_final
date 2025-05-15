@@ -1,9 +1,9 @@
+"use client"
+
 import { ArrowRight, Bot, FileText, BarChart, Zap, Repeat, FileCheck } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import Link from "next/link";
-
 
 export default function AutomationTools() {
   return (
@@ -21,16 +21,19 @@ export default function AutomationTools() {
                   individuals.
                 </p>
               </div>
-              <div className="mx-auto flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50">
+              <div className="mx-auto">
+                <Button
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50"
+                  onClick={() => {
+                    const overviewSection = document.getElementById("overview")
+                    if (overviewSection) {
+                      overviewSection.scrollIntoView({ behavior: "smooth" })
+                    }
+                  }}
+                >
                   Explore Automation Tools
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Link href="/contact/get-a-consultation">
-                  <Button variant="outline" className="border-[#fbc710] text-black hover:bg-[#fbc710]/10">
-                    Schedule Demo
-                  </Button>
-                </Link>
               </div>
             </div>
           </div>
@@ -92,48 +95,48 @@ export default function AutomationTools() {
               </p>
             </div>
             <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 mt-8 max-w-6xl">
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <Bot className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>AI-Powered Expense Categorization</CardTitle>
+                  <CardTitle className="text-center">AI-Powered Expense Categorization</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Automatically sorts expenses.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <FileText className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Automated Invoice Processing</CardTitle>
+                  <CardTitle className="text-center">Automated Invoice Processing</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Converts receipts into digital records.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <Repeat className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Recurring Transaction Management</CardTitle>
+                  <CardTitle className="text-center">Recurring Transaction Management</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Simplifies payroll and vendor payments.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <FileCheck className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Bank Reconciliation Automation</CardTitle>
+                  <CardTitle className="text-center">Bank Reconciliation Automation</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Matches transactions with statements.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center">
                   <Zap className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Custom Workflow Automation</CardTitle>
+                  <CardTitle className="text-center">Custom Workflow Automation</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Personalized bookkeeping solutions.</p>
                 </CardContent>
               </Card>

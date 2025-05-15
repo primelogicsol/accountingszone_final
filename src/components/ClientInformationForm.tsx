@@ -28,6 +28,15 @@ import {
   SelectTrigger,
 } from "@/components/ui/select";
 
+const MAX_FILE_SIZE = 3 * 1024 * 1024; // 3MB
+const ACCEPTED_FILE_TYPES = [
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "image/jpeg",
+  "image/png",
+];
+
 export default function ClientInformationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -82,24 +91,47 @@ export default function ClientInformationForm() {
     governmentIssuedID?: File;
   }>({});
 
-  // Handler for file input changes
+  // Handler for file input changes with validation
   const handleFileChange = (
     name: keyof typeof files,
     event: React.ChangeEvent<HTMLInputElement>,
     onChange: (value: string) => void
   ) => {
     const file = event.target.files?.[0];
-    if (file) {
-      setFiles((prev) => ({ ...prev, [name]: file }));
-      onChange(file.name); // Update form field with file name
-    } else {
+    if (!file) {
       setFiles((prev) => {
         const updated = { ...prev };
         delete updated[name];
         return updated;
       });
       onChange(""); // Clear form field
+      return;
     }
+
+    // Validate file size
+    if (file.size > MAX_FILE_SIZE) {
+      toast({
+        title: "File too large",
+        description: `The file ${file.name} exceeds the 3MB limit`,
+        variant: "destructive",
+      });
+      event.target.value = ""; // Reset the input
+      return;
+    }
+
+    // Validate file type
+    if (!ACCEPTED_FILE_TYPES.includes(file.type)) {
+      toast({
+        title: "Invalid file type",
+        description: `Please upload PDF, DOC, DOCX, JPG, or PNG files only`,
+        variant: "destructive",
+      });
+      event.target.value = ""; // Reset the input
+      return;
+    }
+
+    setFiles((prev) => ({ ...prev, [name]: file }));
+    onChange(file.name); // Update form field with file name
   };
 
   const onSubmit = async (data: z.infer<typeof clientInformationFormSchema>) => {
@@ -124,23 +156,18 @@ export default function ClientInformationForm() {
       });
 
       // Add file fields to FormData
-      if (files.businessRegistrationCertificate) {
-        formData.append(
-          "businessRegistrationCertificate",
-          files.businessRegistrationCertificate
+      let totalFileSize = 0;
+      Object.entries(files).forEach(([key, file]) => {
+        totalFileSize += file.size;
+        formData.append(key, file);
+      });
+
+      // Check total payload size before submission
+      if (totalFileSize > 8 * 1024 * 1024) {
+        // 10MB limit
+        throw new Error(
+          "Total file size exceeds the maximum allowed limit of 8MB"
         );
-      }
-      if (files.taxIdentificationCertificate) {
-        formData.append(
-          "taxIdentificationCertificate",
-          files.taxIdentificationCertificate
-        );
-      }
-      if (files.financialStatements) {
-        formData.append("financialStatements", files.financialStatements);
-      }
-      if (files.governmentIssuedID) {
-        formData.append("governmentIssuedID", files.governmentIssuedID);
       }
 
       const response = await axios.post<ApiResponse>(
@@ -164,10 +191,19 @@ export default function ClientInformationForm() {
       setFiles({});
     } catch (error) {
       console.error("Error in submitting client information: ", error);
-      const axiosError = error as AxiosError<ApiResponse>;
-      const errorMessage =
-        axiosError.response?.data.message ||
-        "Failed to submit client information";
+      let errorMessage = "Failed to submit client information";
+
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      } else {
+        const axiosError = error as AxiosError<ApiResponse>;
+        if (axiosError.response?.data.message) {
+          errorMessage = axiosError.response.data.message;
+        } else if (axiosError.response?.status === 413) {
+          errorMessage = "Files are too large to upload. Please reduce file sizes.";
+        }
+      }
+
       toast({
         title: "Submission Failed",
         description: errorMessage,
@@ -191,6 +227,10 @@ export default function ClientInformationForm() {
         className="container max-w-[1300px] my-[150px] px-8 mx-auto flex flex-col gap-16 sm:gap-20"
       >
         <div className="sm:mb-6 md:mb-14">
+          <p className="text-sm text-gray-600 mb-6">
+            Please note: All files must be less than 3MB in size. Accepted formats:
+            PDF, DOC, DOCX, JPG, PNG.
+          </p>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-20">
               <div className="space-y-8">
@@ -455,7 +495,9 @@ export default function ClientInformationForm() {
                             placeholder="Enter number of employees"
                             className="rounded-none hover:border-black duration-300 px-4 py-6"
                             value={field.value || ""}
-                            onChange={(e) => field.onChange(Number(e.target.value))}
+                            onChange={(e) =>
+                              field.onChange(Number(e.target.value))
+                            }
                           />
                         </FormControl>
                         <FormMessage />
@@ -690,7 +732,13 @@ export default function ClientInformationForm() {
                         <FormControl>
                           <Input
                             type="file"
-                            onChange={(e) => handleFileChange("businessRegistrationCertificate", e, field.onChange)}
+                            onChange={(e) =>
+                              handleFileChange(
+                                "businessRegistrationCertificate",
+                                e,
+                                field.onChange
+                              )
+                            }
                             className="rounded-none hover:border-black duration-300 px-4 pt-[14px] pb-[34px]"
                           />
                         </FormControl>
@@ -703,12 +751,20 @@ export default function ClientInformationForm() {
                     control={form.control}
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Upload Tax Identification Certificate *</FormLabel>
+                        <FormLabel>
+                          Upload Tax Identification Certificate *
+                        </FormLabel>
                         <FormControl>
                           <Input
                             type="file"
                             required
-                            onChange={(e) => handleFileChange("taxIdentificationCertificate", e, field.onChange)}
+                            onChange={(e) =>
+                              handleFileChange(
+                                "taxIdentificationCertificate",
+                                e,
+                                field.onChange
+                              )
+                            }
                             className="rounded-none hover:border-black duration-300 px-4 pt-[14px] pb-[34px]"
                           />
                         </FormControl>
@@ -721,11 +777,19 @@ export default function ClientInformationForm() {
                     control={form.control}
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Upload Financial Statements (Optional)</FormLabel>
+                        <FormLabel>
+                          Upload Financial Statements (Optional)
+                        </FormLabel>
                         <FormControl>
                           <Input
                             type="file"
-                            onChange={(e) => handleFileChange("financialStatements", e, field.onChange)}
+                            onChange={(e) =>
+                              handleFileChange(
+                                "financialStatements",
+                                e,
+                                field.onChange
+                              )
+                            }
                             className="rounded-none hover:border-black duration-300 px-4 pt-[14px] pb-[34px]"
                           />
                         </FormControl>
@@ -743,7 +807,13 @@ export default function ClientInformationForm() {
                           <Input
                             type="file"
                             required
-                            onChange={(e) => handleFileChange("governmentIssuedID", e, field.onChange)}
+                            onChange={(e) =>
+                              handleFileChange(
+                                "governmentIssuedID",
+                                e,
+                                field.onChange
+                              )
+                            }
                             className="rounded-none hover:border-black duration-300 px-4 pt-[14px] pb-[34px]"
                           />
                         </FormControl>

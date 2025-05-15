@@ -3092,43 +3092,46 @@ export default function Navbar() {
                 <span className={pathname.includes("/contact") ? "text-[#fbc710]" : "text-black"}>Contact</span>
                 {contactDropdownOpen ? <RxCross2 className="size-4" /> : <RxHamburgerMenu className="size-4" />}
               </div>
-              <ul
+              <div
                 className={`mt-2 w-full px-5 transition-all duration-300 overflow-hidden ${
                   contactDropdownOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <li>
-                  <Link
-                    href="/contact/get-a-consultation"
-                    className={`transition-colors block py-1 ${
-                      pathname === "/contact/get-a-consultation" ? "text-[#fbc710]" : "text-black"
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Get a Consultation
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact/support"
-                    className={`transition-colors block py-1 ${
-                      pathname === "/contact/support" ? "text-[#fbc710]" : "text-black"
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Support
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-black transition-colors block py-1"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Office Locations
-                  </Link>
-                </li>
-              </ul>
+                <div className="flex flex-col gap-y-4 w-full text-base pl-4">
+                  <li>
+                    <Link
+                      href="/contact/get-a-consultation"
+                      className={`transition-colors block py-1 ${
+                        pathname === "/contact/get-a-consultation" ? "text-[#fbc710]" : "text-black"
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Get a Consultation
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contact/support"
+                      className={`transition-colors block py-1 ${
+                        pathname === "/contact/support" ? "text-[#fbc710]" : "text-black"
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Support
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="text-black transition-colors block py-1"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Office Locations
+                    </Link>
+                  </li>
+                  
+                </div>
+              </div>
             </li>
           </ul>
         </div>

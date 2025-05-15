@@ -1,9 +1,18 @@
+"use client"
+
+import { useRef } from "react"
 import { ArrowRight, Users, MessageSquare, Calendar, Search, Shield, UserCheck, MessageCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function CommunityForum() {
+  const overviewRef = useRef<HTMLElement>(null)
+
+  const scrollToOverview = () => {
+    overviewRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <main className="flex-1 flex flex-col items-center">
@@ -17,20 +26,20 @@ export default function CommunityForum() {
                   insights.
                 </p>
               </div>
-              <div className="mx-auto flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50">
-                  Join the Community
+              <div className="mx-auto">
+                <Button
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50"
+                  onClick={scrollToOverview}
+                >
+                  Explore Community Forum
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline" className="border-[#fbc710] text-black hover:bg-[#fbc710]/10">
-                  Browse Discussions
                 </Button>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="overview" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="overview" ref={overviewRef} className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center space-y-4 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Overview</h2>
@@ -86,41 +95,41 @@ export default function CommunityForum() {
               </p>
             </div>
             <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 mt-8 max-w-6xl">
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex items-center justify-center text-center">
                   <Users className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Peer-to-Peer Support</CardTitle>
+                  <CardTitle className="text-center">Peer-to-Peer Support</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Engage with fellow users and experts.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex items-center justify-center text-center">
                   <MessageSquare className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Discussion Boards</CardTitle>
+                  <CardTitle className="text-center">Discussion Boards</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">
                     Topics on tax strategies, software issues, and general queries.
                   </p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex items-center justify-center text-center">
                   <Calendar className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Exclusive Community Events</CardTitle>
+                  <CardTitle className="text-center">Exclusive Community Events</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Webinars, Q&A sessions, and expert discussions.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex items-center justify-center text-center">
                   <Search className="h-8 w-8 mb-2 text-[#fbc710]" />
-                  <CardTitle>Searchable Threads</CardTitle>
+                  <CardTitle className="text-center">Searchable Threads</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Easily find discussions relevant to your needs.</p>
                 </CardContent>
               </Card>

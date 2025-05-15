@@ -1,3 +1,5 @@
+"use client"
+
 import { ArrowRight, Search, BookOpen, Layers, Lightbulb, CheckSquare, Play } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -17,13 +19,18 @@ export default function InteractiveGuides() {
                   tax filing processes, and accounting systems.
                 </p>
               </div>
-              <div className="mx-auto flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50">
+              <div className="mx-auto">
+                <Button
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50"
+                  onClick={() => {
+                    const overviewElement = document.getElementById("overview");
+                    if (overviewElement) {
+                      overviewElement.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
                   Explore Guides
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline" className="border-[#fbc710] text-black hover:bg-[#fbc710]/10">
-                  Learn More
                 </Button>
               </div>
             </div>
@@ -86,40 +93,40 @@ export default function InteractiveGuides() {
                 What makes our interactive guides effective learning tools.
               </p>
             </div>
-            <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-4 mt-12 max-w-6xl">
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+            <div className="mx-auto grid justify-center gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-12 max-w-6xl">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center text-center">
                   <BookOpen className="h-8 w-8 mb-2 text-[#fbc710]" />
                   <CardTitle>Step-by-Step Instructions</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Easily digestible lessons with visuals.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center text-center">
                   <Play className="h-8 w-8 mb-2 text-[#fbc710]" />
                   <CardTitle>Real-Time Simulations</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Interactive scenarios for practical learning.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center text-center">
                   <Layers className="h-8 w-8 mb-2 text-[#fbc710]" />
                   <CardTitle>Customized Learning</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Tailored guides based on user experience levels.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center text-center">
                   <CheckSquare className="h-8 w-8 mb-2 text-[#fbc710]" />
                   <CardTitle>Quizzes & Assessments</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Test knowledge and receive feedback.</p>
                 </CardContent>
               </Card>

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import type * as z from "zod";
+import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import type { ApiResponse } from "@/types/ApiResponse";
@@ -21,12 +21,18 @@ import { Button } from "@/components/ui/button";
 import { partnerApplicationFormSchema } from "@/schemas/partnerApplicationFormSchema";
 import { Checkbox } from "@/components/ui/checkbox";
 
+// Define the form input types (before Zod transformations)
+type PartnerFormValues = Omit<z.infer<typeof partnerApplicationFormSchema>, 'yearsInOperation' | 'annualRevenue'> & {
+  yearsInOperation: string;
+  annualRevenue?: string | undefined;
+};
+
 export default function PartnerApplicationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const form = useForm<z.infer<typeof partnerApplicationFormSchema>>({
-    resolver: zodResolver(partnerApplicationFormSchema),
+  const form = useForm<PartnerFormValues>({
+    resolver: zodResolver(partnerApplicationFormSchema) as any,
     defaultValues: {
       businessName: "",
       contactPerson: "",
@@ -36,7 +42,7 @@ export default function PartnerApplicationForm() {
       website: "",
       typeOfBusiness: "",
       industryCategory: "",
-      yearsInOperation: "",
+      yearsInOperation: "0",
       businessRegistrationNumber: "",
       taxIdentificationNumber: "",
       reasonForPartnership: "",
@@ -57,7 +63,7 @@ export default function PartnerApplicationForm() {
     },
   });
 
-  const onSubmit = async (data: z.infer<typeof partnerApplicationFormSchema>) => {
+  const onSubmit = async (data: PartnerFormValues) => {
     setIsSubmitting(true);
 
     try {

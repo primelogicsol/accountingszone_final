@@ -1,6 +1,20 @@
+
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { uploadFile } from "@/lib/cloudinary";
+
+// Set the file size limit for this specific API route
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '10mb' // 10MB limit for the entire request
+    },
+    responseLimit: false
+  }
+};
+
+// Maximum file size (5MB per file)
+const MAX_FILE_SIZE = 5 * 1024 * 1024;
 
 export async function POST(request: Request) {
   try {
@@ -10,6 +24,20 @@ export async function POST(request: Request) {
     const businessRegistrationCertificate = formData.get("businessRegistrationCertificate") as File;
     const taxIdentificationCertificate = formData.get("taxIdentificationCertificate") as File;
     const portfolioOrReferences = formData.get("portfolioOrReferences") as File;
+    
+    // Validate file sizes on the server side
+    const validateFileSize = (file: File | null) => {
+      if (!file) return true;
+      if (file.size > MAX_FILE_SIZE) {
+        throw new Error(`File ${file.name} exceeds the maximum size limit of 5MB`);
+      }
+      return true;
+    };
+    
+    // Validate each file
+    validateFileSize(businessRegistrationCertificate);
+    validateFileSize(taxIdentificationCertificate);
+    validateFileSize(portfolioOrReferences);
     
     // Upload files to Cloudinary
     let businessRegistrationCertificateUrl = "";
@@ -107,8 +135,17 @@ export async function POST(request: Request) {
       { message: "Partner application submitted successfully" },
       { status: 201 }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error in partner-application:", error);
+    
+    // Return specific error message for file size issues
+    if (error.message && error.message.includes('exceeds the maximum size')) {
+      return NextResponse.json(
+        { message: error.message },
+        { status: 413 } // Payload Too Large
+      );
+    }
+    
     return NextResponse.json(
       { message: "An error occurred while submitting partner application" },
       { status: 500 }

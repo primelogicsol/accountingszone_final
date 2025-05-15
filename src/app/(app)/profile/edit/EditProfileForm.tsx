@@ -51,7 +51,7 @@ export function EditProfileForm() {
 
   useEffect(() => {
     if (session?.user) {
-      form.setValue("email", session.user.email);
+      form.setValue("email", session.user.email || "");
       form.setValue("username", session.user.username || "");
     }
   }, [session, form]);

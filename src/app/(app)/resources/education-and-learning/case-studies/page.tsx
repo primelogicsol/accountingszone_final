@@ -1,3 +1,5 @@
+"use client"
+
 import { ArrowRight, FileText, Search, BarChart, Building, LineChart, Scale, Briefcase, FileCheck } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -17,13 +19,18 @@ export default function CaseStudies() {
                   business accounting solutions, helping users learn from practical examples.
                 </p>
               </div>
-              <div className="mx-auto flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50">
-                  Browse Case Studies
+              <div className="mx-auto">
+                <Button
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50"
+                  onClick={() => {
+                    const overviewElement = document.getElementById("overview");
+                    if (overviewElement) {
+                      overviewElement.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
+                  Explore Case Studies
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline" className="border-[#fbc710] text-black hover:bg-[#fbc710]/10">
-                  Learn More
                 </Button>
               </div>
             </div>
@@ -85,44 +92,44 @@ export default function CaseStudies() {
                 What makes our case studies valuable learning resources.
               </p>
             </div>
-            <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-4 mt-12 max-w-6xl">
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+            <div className="mx-auto grid justify-center gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-12 max-w-6xl">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center text-center">
                   <Building className="h-8 w-8 mb-2 text-[#fbc710]" />
                   <CardTitle>Industry-Specific</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex items-center justify-center">
                   <p className="text-muted-foreground text-center">
                     Tailored examples across different business sectors.
                   </p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center text-center">
                   <BarChart className="h-8 w-8 mb-2 text-[#fbc710]" />
                   <CardTitle>Financial Analysis</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Understanding the impact of financial decisions.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center text-center">
                   <FileText className="h-8 w-8 mb-2 text-[#fbc710]" />
                   <CardTitle>Key Takeaways</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex items-center justify-center">
                   <p className="text-muted-foreground text-center">
                     Practical insights for application in your business.
                   </p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center text-center">
                   <LineChart className="h-8 w-8 mb-2 text-[#fbc710]" />
                   <CardTitle>Comparative Analysis</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Benchmarking best practices across industries.</p>
                 </CardContent>
               </Card>

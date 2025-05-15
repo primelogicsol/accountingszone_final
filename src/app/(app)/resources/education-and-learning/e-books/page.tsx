@@ -1,3 +1,5 @@
+"use client"
+
 import { ArrowRight, FileText, Search, BookOpen, Download, Briefcase, RefreshCw, Smartphone } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -19,13 +21,18 @@ export default function Ebooks() {
                   and investment strategies.
                 </p>
               </div>
-              <div className="mx-auto flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50">
-                  Browse E-books
+              <div className="mx-auto">
+                <Button
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-[#fbc710] px-8 text-sm font-medium text-black shadow transition-colors hover:bg-[#fbc710]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#fbc710] disabled:pointer-events-none disabled:opacity-50"
+                  onClick={() => {
+                    const overviewElement = document.getElementById("overview");
+                    if (overviewElement) {
+                      overviewElement.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
+                  Explore E-books
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline" className="border-[#fbc710] text-black hover:bg-[#fbc710]/10">
-                  Learn More
                 </Button>
               </div>
             </div>
@@ -87,44 +94,44 @@ export default function Ebooks() {
                 What makes our e-books valuable financial resources.
               </p>
             </div>
-            <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-4 mt-12 max-w-6xl">
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+            <div className="mx-auto grid justify-center gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-12 max-w-6xl">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center text-center">
                   <BookOpen className="h-8 w-8 mb-2 text-[#fbc710]" />
                   <CardTitle>Comprehensive Guides</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex items-center justify-center">
                   <p className="text-muted-foreground text-center">
                     Covering tax planning, budgeting, and bookkeeping.
                   </p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center text-center">
                   <Briefcase className="h-8 w-8 mb-2 text-[#fbc710]" />
                   <CardTitle>Industry-Specific Advice</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Tailored insights for different professions.</p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center text-center">
                   <Smartphone className="h-8 w-8 mb-2 text-[#fbc710]" />
                   <CardTitle>Multi-Device Access</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex items-center justify-center">
                   <p className="text-muted-foreground text-center">
                     Downloadable and printable materials for any device.
                   </p>
                 </CardContent>
               </Card>
-              <Card className="h-full">
-                <CardHeader className="flex items-center justify-center">
+              <Card className="h-full flex flex-col">
+                <CardHeader className="flex flex-col items-center justify-center text-center">
                   <RefreshCw className="h-8 w-8 mb-2 text-[#fbc710]" />
                   <CardTitle>Updated Regulations</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex items-center justify-center">
                   <p className="text-muted-foreground text-center">Ensuring compliance with current laws.</p>
                 </CardContent>
               </Card>

@@ -27,7 +27,7 @@ export default function GlobalButtonRedirector() {
         buttonText.includes("request audit readiness checklist") ||
         buttonText.includes("request complimentary financial review") ||
         buttonText.includes("get a free consultation")||
-        buttonText.incldues("request complimentary assessment") ||
+        buttonText.includes("request complimentary assessment") ||
         buttonText.includes("request risk assessment") ||
         buttonText.includes("request inventory efficiency assessment") ||
         buttonText.includes("request reporting demo") ||
@@ -49,7 +49,26 @@ export default function GlobalButtonRedirector() {
         buttonText.includes("get a free consultation") ||
         buttonText.includes("get a free assessment") ||
         buttonText.includes("get a free demo") ||
-        buttonText.includes("get a free trial")
+        buttonText.includes("get a free trial") ||
+        buttonText.includes("explore automation tools") ||
+        buttonText.includes("schedule demo") ||
+        buttonText.includes("view deadlines") ||
+        buttonText.includes("set reminders") ||
+        buttonText.includes("view state deadlines") ||
+        buttonText.includes("view latest updates") ||
+        buttonText.includes("subscribe to alerts") ||
+        buttonText.includes("subscribe to updates") ||
+        buttonText.includes("explore knowledge base") ||
+        buttonText.includes("ask a question") ||
+        buttonText.includes("ask our experts") ||
+        buttonText.includes("learn about security") ||
+        buttonText.includes("security compliance") ||
+        buttonText.includes("view security details") ||
+        buttonText.includes("get support") ||
+        buttonText.includes("contact support") ||
+        buttonText.includes("connect with support")
+        
+
 
 
       ) {
