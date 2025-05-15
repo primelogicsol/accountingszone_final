@@ -17,4 +17,4 @@
 - **Framework**: Next.js
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **State Management**: React Hooks and Redux Toolkit (RTK)
+- **State Management**: React Hooks and Redux Toolkit
